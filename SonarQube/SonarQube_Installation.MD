@@ -1,11 +1,11 @@
 # SonarQube Installation
 
 SonarQube provides the capability to not only show health of an application but also to highlight issues newly introduced. With a Quality Gate in place, you can fix the leak and therefore improve code quality systematically.
-### Follow this Article in **[YouTube](https://www.youtube.com/watch?v=zRQrcAi9UdU)**
+
 
 ### Prerequisites
 1. EC2 instance with Java installed
-1. MySQL Database Server or MyQL RDS instance. **[Get help here](https://www.youtube.com/watch?v=vLaW6b441x0)**
+1. MySQL Database Server or MyQL RDS instance.
 
 ### Installation
 
@@ -16,14 +16,20 @@ Install MySQL client version
  ```
 Download stable SonarQube version from below website. 
 - Website: https://www.sonarqube.org/downloads/
-- Note: This Article written for SonarQube6.0  
+- Note: This Article written for SonarQube version 6.7.6
 
-Download & unzip SonarQube 6.0
+Download & unzip SonarQube 6.7.6
 ```sh
 # cd /opt
-# wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.0.zip
-# unzip sonarqube-6.0.zip
-# mv /opt/sonarqube-6.0 /opt/sonar
+# wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.7.6.zip
+# unzip sonarqube-6.7.6.zip
+# mv /opt/sonarqube-6.7.6 /opt/sonar
+```
+Create new user give ownership to /opt/sonar directory 
+```sh
+ # useradd sonar
+ # password sonar
+ # chown -R sonar:sonar /opt/sonar
 ```
 Allow RDS instance security group to access SonarQube server 
 
@@ -68,8 +74,9 @@ Edit sonar properties file to uncomment and provide required information for bel
   - sonar.web.host=`0.0.0.0`
   - sonar.web.context=`/sonar`
 
-Start SonarQube service 
+Switch to sonar user and start SonarQube service 
 ```sh
+# su - sonar
 # cd /opt/sonar/bin/linux-x86-64/
 # ./sonar.sh start
 ```
