@@ -2,11 +2,11 @@
 ## SonarQube Integration with Jenkins
 
 Integration SonarQube server with Jenkins is necessary to store your reports. Follow below steps to enable that.
-### Follow this in **[YouTube](https://www.youtube.com/watch?v=k-3krTRuAFA)**
+
 
 ### Prerequisites
-1. SonarQube Server **[Get Help here](https://www.youtube.com/watch?v=zRQrcAi9UdU)**
-1. Jenkins Server  **[Get Help here](https://www.youtube.com/watch?v=M32O4Yv0ANc)**
+1. SonarQube Server 
+1. Jenkins Server
 
 ### Implementation
 
@@ -47,12 +47,11 @@ To Get Authentication code follow below steps.
 Create a job to test SonarQube. Provide below sonar properties details in the job under build 
 - Build:
   - `Execute SonarQube Scanner` > `Analysis properties`  (it is mandatary).  
-     - sonar.projectKey=`Valaxy`
-     - sonar.projectName=`ValaxyDemo`
+     - sonar.projectKey=`DevOpsProject`
+     - sonar.projectName=`DevOpsProject`
      - sonar.projectVersion=`1.0`
      - sonar.sources=`/var/lib/jenkins/workspace/$JOB_NAME/<PROJECT_NAME>/src`
 
 Execute job to get analysis report. 
 
-### Next Step
-- [x] [Nexus Installation](https://www.youtube.com/watch?v=83AGz9huJGo)
+
