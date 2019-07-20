@@ -1,0 +1,20 @@
+# Option-1 : Createting docker image using command module 
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: building docker image
+    command: docker build -t simple-devops-image .
+    args:
+      chdir: /opt/docker
+
+# option-2 : creating docker image using docker_image module 
+
+#  tasks:
+#  - name: building docker image
+#    docker_image:
+#      build:
+#        path: /opt/docker
+#      name: simple-devops-image
+#     tag: v1
+#     source: build

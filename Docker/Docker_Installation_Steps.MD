@@ -1,21 +1,41 @@
 # Installing Docker on Amazon Linux server
 
-1. Update packages
-   ```sh 
-   yum update -y
-   ```
-2. Install docker
+### Pre-requisites
+1. Amazon Linux EC2 Instance
+
+## Installation Steps
+
+1. Install docker and start docker services
    ```sh 
    yum install docker -y
+   docker --version 
+   
+   # start docker services
+   service docker start
+   service docker status
+   ```
+1. Create a user called dockeradmin
+   ```sh
+   useradd dockeradmin
+   passwd dockeradmin
+   ```
+1. add a user to docker group to manage docker 
+   ```
+   usermod -aG docker dockeradmin
+   ```
+### Validation test
+1. Create a tomcat docker container by pulling a docker image from the public docker registry
+   ```sh
+   docker run -d --name test-tomcat-server -p 8090:8080 tomcat:latest
    ```
 
 ## Docker Installation on CentOS server
 ##### Referance URL : https://docs.docker.com/install/linux/docker-ce/centos/#install-using-the-repository
-### PRre-requisites
+### Pre-requisites
 
 Please follow below steps to install docker CE on CentoOS server instance. For RedHat only Docker EE available 
 
-1. Install required packages.
+1. Install the required packages.
 
    ```sh 
    sudo yum install -y yum-utils \
