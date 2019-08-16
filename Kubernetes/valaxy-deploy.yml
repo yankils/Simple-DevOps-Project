@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: valaxy-devops-project
-        image: yankils/simple-devops-demo
+        image: yankils/simple-devops-image
         ports:
         - containerPort: 8080
