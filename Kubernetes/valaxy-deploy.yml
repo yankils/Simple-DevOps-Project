@@ -7,6 +7,12 @@ spec:
     matchLabels:
       app: valaxy-devops-project
   replicas: 2 # tells deployment to run 2 pods matching the template
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
   template:
     metadata:
       labels:
@@ -14,9 +20,6 @@ spec:
     spec:
       containers:
       - name: valaxy-devops-project
-        #To create new pods every time when there is a new image, replace image tag with version number
-        image: yankils/simple-devops-image:altest 
-     
-        imagePullPolicy: Always
+        image: yankils/simple-devops-demo
         ports:
         - containerPort: 8080
