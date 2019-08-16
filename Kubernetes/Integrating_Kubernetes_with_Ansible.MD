@@ -8,9 +8,9 @@
 		
 1.  Check for pods, deployments and services on kubernetes master
     ```sh 
-    kubectl get pods 
-    kubectl get deploy 
-    kubectl get service
+    kubectl get pods -o wide 
+    kubectl get deploy -o wide
+    kubectl get service -o wide
     ```
 	
 1. Access application suing service IP
