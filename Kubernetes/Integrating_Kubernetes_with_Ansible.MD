@@ -4,7 +4,7 @@
 
 1. Update hosts file with new group called kubernetes and add kubernetes master in that. 
 
-1. Create ansible playbooks to create deployment and services 
+1. Create ansible playbooks to create **[deployment](https://github.com/yankils/Simple-DevOps-Project/blob/master/Kubernetes/kubernetes-valaxy-deployment.yml)** and **[services](https://github.com/yankils/Simple-DevOps-Project/blob/master/Kubernetes/kubernetes-valaxy-service.yml)** 
 		
 1.  Check for pods, deployments and services on kubernetes master
     ```sh 
