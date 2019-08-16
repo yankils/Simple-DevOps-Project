@@ -1,0 +1,22 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: valaxy-deployment
+spec:
+  selector:
+    matchLabels:
+      app: valaxy-devops-project
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: valaxy-devops-project
+    spec:
+      containers:
+      - name: valaxy-devops-project
+        #To create new pods every time when there is a new image, replace image tag with version number
+        image: yankils/simple-devops-image:altest 
+     
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
