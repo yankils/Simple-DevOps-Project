@@ -1,7 +1,7 @@
 # Option-1 : Createting docker container using command module 
 ---
 - hosts: all
-  become: ture
+  become: true
 
   tasks:
   - name: creating docker image using docker command
