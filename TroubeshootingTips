@@ -1,0 +1,6 @@
+I am sharing few troubleshooting which I figured while setting up to make it work.
+
+1. Remove the "become:true" in the create-simple-devops-project.yml file
+2. Add "connection: local" below the hosts line in the create-simple-devops-project.yml file
+3. The deployment uses "root" as the user in Kubernetes Master server, therefore add "root@<master-ip-address>" inside /opt/ansible/hosts file
+4. After Step 3, run "ansible all -m ping" to see if you get a pong message back from the kubernetes master
