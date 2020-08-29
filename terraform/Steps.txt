@@ -1,0 +1,68 @@
+If you are using your own secuirty group add outbound traffic on port 80 and 443 to install java. 
+
+sudo -i
+yum -y remove java-1.7.0*
+yum -y install java-1.8*
+
+find /usr/lib/jvm/java-1.8* | head -n 3                                    --    to fidn the path of the JRE
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.51.amzn1.x86_64  --    this is the path of the java jre. 
+
+vi ~/.bash_profile
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.51.amzn1.x86_64
+PATH=$PATH:$HOME/bin:$JAVA_HOME
+
+https://pkg.jenkins.io/redhat-stable/
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum -y install jenkins
+service jenkins start
+cat /var/lib/jenkins/secrets/initialAdminPassword
+on portal -- manage jenkins --  global configurations and select JDK Installation and set Name = "JAVA_HOME" and JAVA_HOME "path of the jre on the system"
+
+
+set up github integration: 
+
+yum -y install git
+
+Manage jenkins -- manage plugins -- available (search for github) -- select intall without restart to install github plugin and its dependencies. 
+
+manage jenkins-- global tool configurations -- Git installations -- name (github) and path to Git executable (/usr/bin/git)
+
+
+install maven
+
+https://maven.apache.org/download.cgi
+http://apache.mirrors.hoobly.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz  -- Binary gz tar 
+
+
+cd /opt/
+wget http://apache.mirrors.hoobly.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+tar -xvzf apache-maven-3.6.3-bin.tar.gz
+mv apache-maven-3.6.3 maven
+
+as root
+
+vi ~/.bash_profile
+M2_HOME=/opt/maven
+M2=/opt/maven/bin
+
+add the new varilables to PATH. 
+
+exit and login as root again. 
+
+echo $M2
+mvn --version
+
+Manage Jenkins > Jenkins Plugins > available > Maven Invoker
+Manage Jenkins > Jenkins Plugins > available > Maven Integration
+
+
+install without restart 
+
+
+Manage Jenkins > Global Tool Configuration > Maven
+
+Name: M2_HOME
+MAVEN_HOME: /opt/maven
+
