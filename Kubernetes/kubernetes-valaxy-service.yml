@@ -1,8 +1,8 @@
 ---
 - name: create service for deployment
   hosts: kubernetes
-  become: true
-  user: root
+  # become: true
+  user: ubuntu
 
   tasks:
   - name: create a service
