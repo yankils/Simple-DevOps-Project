@@ -39,4 +39,8 @@ So far we have completed the installation of maven software to support maven plu
 
 2. Configure maven path
   - `Manage Jenkins` > `Global Tool Configuration` > `Maven`
+  
+3. path of maven build project
+  - /var/lib/jenkins/workspace
+
 
