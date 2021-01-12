@@ -16,12 +16,17 @@
    chmod +x /opt/apache-tomcat-8.5.35/bin/startup.sh 
    shutdown.sh
    ```
+1. find context.xml and comment value class name to give access from local system
+    find / -name context.xml
+    vi /opt/apache-tomcat-8.5.61/webapps/host-manager/META-INF/context.xml
+    vi /opt/apache-tomcat-8.5.61/webapps/manager/META-INF/context.xml
+
 
 1. create link files for tomcat startup.sh and shutdown.sh 
    ```sh
    ln -s /opt/apache-tomcat-8.5.35/bin/startup.sh /usr/local/bin/tomcatup
    ln -s /opt/apache-tomcat-8.5.35/bin/shutdown.sh /usr/local/bin/tomcatdown
-   tomcatup
+   tomcatup   
    ```
   #### Check point :
 access tomcat application from browser on port 8080  
