@@ -38,9 +38,12 @@ So far we have completed the installation of maven software to support maven plu
   - `Manage Jenkins` > `Jenkins Plugins` > `available` > `Maven Integration`
 
 2. Configure maven path
-  - `Manage Jenkins` > `Global Tool Configuration` > `Maven`
+  - `Manage Jenkins` > `Global Tool Configuration` > `Maven
   
-3. path of maven build project
+3. Maven home path
+  - `/opt/maven/apache-maven-3.6.3
+  
+4. path of maven build project
   - /var/lib/jenkins/workspace
 
 
