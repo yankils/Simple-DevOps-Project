@@ -17,10 +17,11 @@
    shutdown.sh
    ```
 1. find context.xml and comment value class name to give access from local system
+   ```sh 
     find / -name context.xml
     vi /opt/apache-tomcat-8.5.61/webapps/host-manager/META-INF/context.xml
     vi /opt/apache-tomcat-8.5.61/webapps/manager/META-INF/context.xml
-
+   ```
 
 1. create link files for tomcat startup.sh and shutdown.sh 
    ```sh
