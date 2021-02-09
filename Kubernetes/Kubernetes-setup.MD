@@ -4,7 +4,6 @@
 1. Create Ubuntu EC2 instance
 1. install AWSCLI
    ```sh
-    sudo apt-get update
     curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
     apt install unzip python
     unzip awscli-bundle.zip
@@ -14,16 +13,21 @@
 
 1. Install kubectl on ubuntu instance
    ```sh
-    curl -LO https://dl.k8s.io/release/v1.18.0/bin/linux/amd64/kubectl
+   
+   curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
    ```
 
 1. Install kops on ubuntu instance
    ```sh
-    curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+    curl -LO  https://github.com/kubernetes/kops/releases/download/1.15.0/kops-linux-amd64
     chmod +x kops-linux-amd64
     sudo mv kops-linux-amd64 /usr/local/bin/kops
+    kops version (it should be 1.15.0)
+    Note: use below command if you wish to use latest version. For now we could see latest version of kops. So ignore it until further update. 
+    # curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+
     ```
 1. Create an IAM user/role  with Route53, EC2, IAM and S3 full access
 
@@ -37,7 +41,7 @@
    ```sh
    Routeh53 --> hosted zones --> created hosted zone  
    Domain Name: valaxy.net
-   Type: Private hosted zone for Amzon VPC
+   Type: Private hosted zone for Amazon VPC. Make sure you are chosing right VPC if you have multiple
    ```
 
 1. create an S3 bucket
@@ -82,7 +86,8 @@
 #### Deploying Nginx pods on Kubernetes
 1. Deploying Nginx Container
     ```sh
-    kubectl run sample-nginx --image=nginx --replicas=2 --port=80
+    kubectl run --generator=run-pod/v1 sample-nginx --image=nginx --replicas=2 --port=80
+    #kubectl run sample-nginx --image=nginx --replicas=2 --port=80
     # kubectl run simple-devops-project --image=yankils/simple-devops-image --replicas=2 --port=8080
     kubectl get pods
     kubectl get deployments
