@@ -67,7 +67,17 @@
     ```sh
     kops update cluster demo.k8s.valaxy.net --yes
     ```
-
+1. To cahnge the kubernetes master and worker instance sizes 
+   ```sh 
+   kops edit ig --name=<cluster_name> nodes
+   #kops edit ig --name=demo.k8s.valaxy.net nodes 
+   kops edit ig --name=<cluster_name> master-<zone_name>
+   #kops edit ig --name=demo.k8s.valaxy.net master-ap-south-1b
+   ```
+1. to Delete cluster (try once your lab is done)
+   ```sh 
+   kops delete cluster <cluster_name> --yes
+   ```
 1. Validate your cluster
      ```sh
       kops validate cluster
@@ -78,10 +88,7 @@
    kubectl get nodes
    ```
 
-1. To delete cluster
-    ```sh
-     kops delete cluster demo.k8s.valaxy.net --yes
-    ```
+
    
 #### Deploying Nginx pods on Kubernetes
 1. Deploying Nginx Container
