@@ -17,7 +17,7 @@ Complete DevOps Project course on [Udemy](https://www.udemy.com/course/valaxy-de
    chmod +x /opt/apache-tomcat-<version>/bin/startup.sh 
    chmod +x /opt/apache-tomcat-<version>/bin/shutdown.sh
    ```
-   > Note: you may get below error while starting tomcat incase if you dont install Java 
+   > Note: you may get below error while starting tomcat incase if you dont install Java   
    `Neither the JAVA_HOME nor the JRE_HOME environment variable is defined At least one of these environment variable is needed to run this program`
 1. create link files for tomcat startup.sh and shutdown.sh 
    ```sh
