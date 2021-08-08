@@ -5,6 +5,7 @@
 1. install AWSCLI
    ```sh
     curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
+    apt-get update
     apt install unzip python
     unzip awscli-bundle.zip
     #sudo apt-get install unzip - if you dont have unzip in your system
@@ -15,8 +16,8 @@
    ```sh
    
    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-    chmod +x ./kubectl
-    sudo mv ./kubectl /usr/local/bin/kubectl
+   chmod +x ./kubectl
+   sudo mv ./kubectl /usr/local/bin/kubectl
    ```
 
 1. Install kops on ubuntu instance
