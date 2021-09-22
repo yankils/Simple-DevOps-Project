@@ -42,6 +42,11 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
    yum -y install jenkins
    ```
+   
+   if you see below error message : 
+   "Error: Package: jenkins-2.308-1.1.noarch (Jenkins) Requires: daemonize"
+   then run below command:
+   sudo amazon-linux-extras install epel -y
 
    ### Start Jenkins
    ```sh
