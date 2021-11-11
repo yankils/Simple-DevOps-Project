@@ -59,6 +59,6 @@ You can follow same procedure in the official  AWS document [Getting started wit
 6. Validate your cluster using by creating by checking nodes and by creating a pod 
    ```sh 
    kubectl get nodes
-   kubectl run pod tomcat --image=tomcat 
+   kubectl run tomcat --image=tomcat 
    ```
 
