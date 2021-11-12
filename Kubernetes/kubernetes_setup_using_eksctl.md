@@ -4,15 +4,15 @@ You can follow same procedure in the official  AWS document [Getting started wit
 
 #### Pre-requisites: 
   - an EC2 Instance 
+  - Install AWSCLI latest verison 
 
-#### AWS EKS Setup 
 1. Setup kubectl   
    a. Download kubectl version 1.21  
    b. Grant execution permissions to kubectl executable   
    c. Move kubectl onto /usr/local/bin   
    d. Test that your kubectl installation was successful    
+
    ```sh 
-   
    curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
    chmod +x ./kubectl
    mv ./kubectl /usr/local/bin 
@@ -22,6 +22,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    a. Download and extract the latest release   
    b. Move the extracted binary to /usr/local/bin   
    c. Test that your eksclt installation was successful   
+
    ```sh
    curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
    sudo mv /tmp/eksctl /usr/local/bin
@@ -33,9 +34,9 @@ You can follow same procedure in the official  AWS document [Getting started wit
    IAM user should have access to   
    IAM   
    EC2   
-   VPC    
    CloudFormation
-
+   Note: Check eksctl documentaiton for (Minimum IAM policies)[https://eksctl.io/usage/minimum-iam-policies/) 
+   
 4. Create your cluster and nodes 
    ```sh
    eksctl create cluster --name cluster-name  \
