@@ -87,7 +87,7 @@
 #### Deploying Nginx pods on Kubernetes
 1. Deploying Nginx Container
     ```sh
-    kubectl deploy sample-nginx --image=nginx --replicas=2 --port=80
+    kubectl create deploy sample-nginx --image=nginx --replicas=2 --port=80
     # kubectl deploy simple-devops-project --image=yankils/simple-devops-image --replicas=2 --port=8080
     kubectl get all
     kubectl get pod
