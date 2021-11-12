@@ -34,7 +34,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    IAM user should have access to   
    IAM   
    EC2   
-   CloudFormation
+   CloudFormation  
    Note: Check eksctl documentaiton for (Minimum IAM policies)[https://eksctl.io/usage/minimum-iam-policies/) 
    
 4. Create your cluster and nodes 
