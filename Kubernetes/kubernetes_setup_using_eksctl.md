@@ -66,7 +66,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    #### Deploying Nginx pods on Kubernetes
 1. Deploying Nginx Container
     ```sh
-    kubectl create deploy demo-nginx --image=nginx --replicas=2 --port=80
+    kubectl create deployment  demo-nginx --image=nginx --replicas=2 --port=80
     # kubectl deployment regapp --image=valaxy/regapp --replicas=2 --port=8080
     kubectl get all
     kubectl get pod
