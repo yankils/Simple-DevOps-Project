@@ -34,8 +34,8 @@ You can follow same procedure in the official  AWS document [Getting started wit
    IAM user should have access to   
    IAM   
    EC2   
-   CloudFormation
-   Note: Check eksctl documentaiton for (Minimum IAM policies)[https://eksctl.io/usage/minimum-iam-policies/) 
+   CloudFormation  
+   Note: Check eksctl documentaiton for [Minimum IAM policies](https://eksctl.io/usage/minimum-iam-policies/)
    
 4. Create your cluster and nodes 
    ```sh
@@ -61,5 +61,21 @@ You can follow same procedure in the official  AWS document [Getting started wit
    ```sh 
    kubectl get nodes
    kubectl run tomcat --image=tomcat 
+   ```
+   
+   #### Deploying Nginx pods on Kubernetes
+1. Deploying Nginx Container
+    ```sh
+    kubectl create deployment  demo-nginx --image=nginx --replicas=2 --port=80
+    # kubectl deployment regapp --image=valaxy/regapp --replicas=2 --port=8080
+    kubectl get all
+    kubectl get pod
+   ```
+
+1. Expose the deployment as service. This will create an ELB in front of those 2 containers and allow us to publicly access them.
+   ```sh
+   kubectl expose deployment demo-nginx --port=80 --type=LoadBalancer
+   # kubectl expose deployment regapp --port=8080 --type=LoadBalancer
+   kubectl get services -o wide
    ```
 
