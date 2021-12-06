@@ -8,3 +8,4 @@ RUN mv apache-tomcat-9.0.54/* /opt/tomcat
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 
+#for all my demos
