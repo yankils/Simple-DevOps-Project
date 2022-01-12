@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: Karthik
 
-spec:
+spec: with carg
   ports: 
   - name: Vaishu 
     port: 8080
