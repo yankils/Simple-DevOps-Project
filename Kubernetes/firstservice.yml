@@ -1,11 +1,11 @@
 apiVersion: v11
 kind: Service
 metadata:
-  name: demo-service
+  name: Karthik
 
 spec:
   ports: 
-  - name: demo-service 
+  - name: Vaishu 
     port: 8080
     targetPort: 8080
   
