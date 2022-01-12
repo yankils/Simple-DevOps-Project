@@ -1,4 +1,4 @@
-apiVersion: v1 
+apiVersion: v11
 kind: Service
 metadata:
   name: demo-service
@@ -6,8 +6,8 @@ metadata:
 spec:
   ports: 
   - name: demo-service 
-    port: 80
-    targetPort: 80
+    port: 8080
+    targetPort: 8080
   
   selector: 
     app: demo-app
