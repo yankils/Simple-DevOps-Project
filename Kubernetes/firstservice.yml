@@ -8,10 +8,3 @@ spec: with carg
   - name: Vaishu 
     port: 8080
     targetPort: 8080
-  
-  selector: 
-    app: demo-app
-
-  type: LoadBalancer 
-
-  kubectl expose webapp --type=NodePort --targerPort=80 --
