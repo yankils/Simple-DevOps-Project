@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:centos7.9.2009
 RUN yum install java -y
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
