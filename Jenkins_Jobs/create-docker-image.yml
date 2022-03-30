@@ -16,5 +16,5 @@
 #      build:
 #        path: /opt/docker
 #      name: simple-devops-image
-#     tag: v1
+#     tag: v2
 #     source: build
