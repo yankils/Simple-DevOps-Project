@@ -1,0 +1,23 @@
+# pack-refs with: peeled fully-peeled sorted 
+bc071df4cc858fbb759a967d291d77ba98b54650 refs/heads/master
+9b923680a64fc35efe755b1d50d71ed6a3fa4abd refs/heads/terraform11
+7d441b25701c17a2d60cb1567faba2a43cfa4a03 refs/tags/v0.0.1
+ab383627b374a153744a9b47f7f75fe9fc028fff refs/tags/v0.0.2
+2a6583e0d933f58c1758fc50f7ec0afb92b7aaf4 refs/tags/v0.0.3
+5fdc919f4d4373e57a16dc400f1abdb004805997 refs/tags/v1.0.0
+e9caf81b5dc60091cf7dbe47ccad58dbf9f8dd85 refs/tags/v1.1.0
+70274e4feac772d232f73940590b6ca6224ddebd refs/tags/v1.2.0
+^a91c3463605a7a34f387c5fe927a645857a00295
+f754e97bb5fe42f11be6dfb1fbc1821f7514aa29 refs/tags/v1.3.0
+^1220840b83267b3704b725ce59643be45e01bd54
+1a148e735367aa5508fe24dc7ad0f532e7d3302a refs/tags/v1.3.1
+^75a7f8ebb419fbddc930bf07a9a78d03459a8d6f
+5fea85bede945da42d0c97bb71dc34c09c73605e refs/tags/v1.3.2
+9b923680a64fc35efe755b1d50d71ed6a3fa4abd refs/tags/v1.4.0
+a7f9a2f75dd90cbc56b80598b26941f913f8ede2 refs/tags/v2.0.0
+f8af50fa5199c994e541b5d4ce9acc6185dd4ce3 refs/tags/v2.1.0
+f8af50fa5199c994e541b5d4ce9acc6185dd4ce3 refs/tags/v2.1.1
+fdf42c4890abea194b4633794b7a3026dec97f1c refs/tags/v2.1.2
+46e6c6011916814853556897cbd6fb8a057e4599 refs/tags/v2.1.3
+63ef3f223a4ac4b88d038b866bfdcdf36b5bf14d refs/tags/v2.2.0
+bc071df4cc858fbb759a967d291d77ba98b54650 refs/tags/v2.2.1
