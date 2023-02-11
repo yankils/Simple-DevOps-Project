@@ -18,6 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
+        # Update below image as per own dockerhub account e.g. abc/regapp
         image: valaxy/regapp
         imagePullPolicy: Always
         ports:
