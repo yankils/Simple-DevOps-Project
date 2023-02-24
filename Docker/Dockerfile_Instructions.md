@@ -80,40 +80,40 @@ DockerFile
 
 - Dockerfile Instructions:
 
-FROM:
-RUN:
-CMD:
-ENTRYPOINT:
-WORKDIR:
-COPY:
-ADD:
-EXPOSE:
-ENV:
+- FROM:
+- RUN:
+- CMD:
+- ENTRYPOINT:
+- WORKDIR:
+- COPY:
+- ADD:
+- EXPOSE:
+- ENV:
 
-Using the steps in the above dockerfile, we will need to Install tomcat on Centos:
-FROM: Pull centos from dockerhub
-RUN: Install java
-RUN: Create /opt/tomcat directory
-WORKDIR: Change work directory to /opt/tomcat
-ADD/RUN: Download tomcat packages (If you use RUN then you have to use wget command) and if we ADD then we can just use link address and specify location to copy mostly current directory.
-RUN: Extract tar.gz file
-RUN: Rename to tomcat directory
-EXPOSE: Tell to Docker that it runs on port 8080
-CMD: Start tomcat services
+{ Using the steps in the above dockerfile, we will need to Install tomcat on Centos}:
+- FROM: Pull centos from dockerhub
+- RUN: Install java
+- RUN: Create /opt/tomcat directory
+- WORKDIR: Change work directory to /opt/tomcat
+- ADD/RUN: Download tomcat packages (If you use RUN then you have to use wget command) and if we ADD then we can just use link address and specify location to copy mostly current directory.
+- RUN: Extract tar.gz file
+- RUN: Rename to tomcat directory
+- EXPOSE: Tell to Docker that it runs on port 8080
+- CMD: Start tomcat services
 
 {
 {Please make sure you pay Special at	tention to the version on ADD apache-tomcat version, RUN tar -xvzf and RUN mv}
-FROM centos:latest
-RUN cd /etc/yum.repos.d/
-RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
-RUN yum install java -y
-RUN mkdir /opt/tomcat
-WORKDIR /opt/tomcat
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz .
-RUN tar -xvzf apache-tomcat-9.0.70.tar.gz
-RUN mv apache-tomcat-9.0.70 /opt/tomcat
-EXPOSE 8080
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+- FROM centos:latest
+- RUN cd /etc/yum.repos.d/
+- RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+- RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+- RUN yum install java -y
+- RUN mkdir /opt/tomcat
+- WORKDIR /opt/tomcat
+- ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz .
+- RUN tar -xvzf apache-tomcat-9.0.70.tar.gz
+- RUN mv apache-tomcat-9.0.70 /opt/tomcat
+- EXPOSE 8080
+- CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 }
 }
