@@ -102,7 +102,7 @@ DockerFile
 - CMD: Start tomcat services
 
 {
-{Please make sure you pay Special at	tention to the version on ADD apache-tomcat version, RUN tar -xvzf and RUN mv}
+{Please make sure you pay Special attention to the version on ADD apache-tomcat version, RUN tar -xvzf and RUN mv}
 - FROM centos:latest
 - RUN cd /etc/yum.repos.d/
 - RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
