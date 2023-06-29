@@ -1,4 +1,5 @@
 FROM centos
+RUN cd /etc/yum.repos.d/
 RUN yum install java -y
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
